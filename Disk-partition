@@ -1,0 +1,51 @@
+To make Disk Partition
+---------------------
+
+
+disk /dev/sdb
+press n to create new logical partition
+press p to choose primary partition
+choose between one to four
+Where to start from size from by default press Enter 
+choose size disk partition  by +size+G/M Eg:  (+3G)
+press P to display current partition
+Press L to locate filesystem and then choose file you want 
+Press W to save or press Q to quit
+
+gparted to do partition by GUI
+-------------------------------
+To update kernal type partprope
+
+to verify disk partition
+----------------------
+lsblk
+fdisk -l
+cat /proc/partitions
+--------------------------
+
+VOLUME LOGICAL MANAGEMENT
+---------------------------
+
+To Create systemfile  mkfs.xfs /dev/sdb1
+To create mount /dev/sdb1 /kabadhe/
+
+To remove umount /dev/sdb1 /kabadhe/
+
+-------------------------------------
+
+
+To create Physical volume
+--------------------------
+#pvcreate /dev/sdb1 /dev/sdb2 
+To view #pvs or #pvdisplay
+
+
+To create  volume group
+--------------------------
+#vgcreate practice /dev/sdb1 /dev/sdb2 
+To view #vgs 
+
+To create Logical volume
+--------------------------
+#lvcreate -n kaas practice -L 500m
+To view #lvs
